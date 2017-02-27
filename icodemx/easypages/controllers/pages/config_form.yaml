@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Page
+
+# Model Form Field configuration
+form: $/icodemx/easypages/models/page/fields.yaml
+
+# Model Class name
+modelClass: Icodemx\EasyPages\Models\Page
+
+# Default redirect location
+defaultRedirect: icodemx/easypages/pages
+
+# Create page
+create:
+    title: Create Page
+    redirect: icodemx/easypages/pages/update/:id
+    redirectClose: icodemx/easypages/pages
+
+# Update page
+update:
+    title: Edit Page
+    redirect: icodemx/easypages/pages
+    redirectClose: icodemx/easypages/pages
+
+# Preview page
+preview:
+    title: Preview Page

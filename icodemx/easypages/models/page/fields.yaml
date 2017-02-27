@@ -1,0 +1,94 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    title:
+       span: left
+       label: arzola.ospages::lang.editor.title
+       placeholder: arzola.ospages::lang.editor.new_title
+       attributes:
+           default-focus: 1
+    slug:
+       span: right
+       placeholder: /
+       label: arzola.ospages::lang.editor.url
+       preset:
+           field: title
+           type: url
+           prefixInput: input[data-parent-url]
+    external_url:
+        span: right
+        placeholder: http://ligaexterna.cdmx.gob.mx
+        label: arzola.ospages::lang.editor.external_url
+
+    toolbar:
+            type: partial
+            path: post_toolbar
+            cssClass: collapse-visible
+
+secondaryTabs:
+  stretch: true:
+  fields:
+
+        parent_id:
+            type: text
+            cssClass: hide
+
+        title_menu:
+            tab: cms::lang.editor.settings
+            spa: auto
+            label: arzola.ospages::lang.editor.title_menu
+            placeholder: arzola.ospages::lang.editor.new_title_men
+            cssClass: form-pad
+            comment: Es el texto que se mostrara en cualquier menú
+
+        excerpt:
+            tab: cms::lang.editor.settings
+            label: Resumen
+            type: textarea
+            size: large
+            cssClass: form-pad
+
+        show_menu:
+            tab: cms::lang.editor.settings
+            span: left
+            label: arzola.ospages::lang.editor.navigation_hidden
+            type: checkbox
+            comment: arzola.ospages::lang.editor.navigation_hidden_comment
+            cssClass: form-pad
+
+        show_sidebar:
+             tab: cms::lang.editor.settings
+             span: left
+             label: arzola.ospages::lang.editor.sidebar_hidden
+             type: checkbox
+             comment: arzola.ospages::lang.editor.sidebar_hidden_comment
+             cssClass: form-pad
+
+        published:
+            tab: cms::lang.editor.settings
+            span: left
+            label: Publicado
+            type: checkbox
+            comment: arzola.ospages::lang.editor.hidden_comment
+            cssClass: form-pad
+        meta:
+            tab: Extra
+            label: cms::lang.editor.meta_title
+            cssClass: form-pad
+
+        meta_description:
+            tab: Extra
+            label: cms::lang.editor.meta_description
+            type: textarea
+            size: tiny
+            cssClass: form-pad
+
+        images:
+            tab: Extra
+            label: Imagenes adjuntas
+            type: fileupload
+            mode: image
+            imageHeight: 600
+            cssClass: form-pad

@@ -1,0 +1,9 @@
+<?= $this->makePartial('toolbar',['allowed'=>$allowed]) ?>
+
+<div class="layout-row">
+	<div class="layout-cell">
+		<div class="layout-relative">
+			<?= $this->makePartial('pages', ['data' => $data]) ?>
+		</div>
+	</div>
+</div>

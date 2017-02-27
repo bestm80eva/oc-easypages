@@ -1,0 +1,50 @@
+.Section-form {
+    border-bottom: solid 1px #BDC3C7;
+    padding: 28px 7px;
+}
+.Section-form:first-of-type {
+    padding-top: 0;
+}
+.Section-form:last-of-type {
+    border: none;
+}
+
+.relContent-type {
+    display: none;
+}
+.component-multiple {
+    display: none;
+    background-color: #E0E0E0;
+    padding: 21px;
+    margin-bottom: 21px;
+}
+
+.table-content-variable {
+    margin-bottom: 56px;
+    border: solid 1px #34495E;
+}
+.table-content-variable thead tr {
+    background-color: #34495E;
+}
+.table-content-variable thead tr th {
+    color: #FFF;
+    padding: 12px;
+}
+.table-content-variable tbody tr td {
+    padding: 12px;
+    font-size: 14px;
+    color: #5B5B5B;
+    vertical-align: middle;
+}
+.table-content-variable tbody tr td a {
+    display: block;
+    width: 100%;
+    text-align: center;
+    height: 100%;
+    font-size: 18px;
+    color: #5B5B5B;
+}
+.table-content-variable tbody tr td a:hover {
+    color: darkred;
+    text-decoration: none;
+}

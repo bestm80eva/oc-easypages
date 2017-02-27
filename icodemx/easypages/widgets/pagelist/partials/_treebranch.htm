@@ -1,0 +1,49 @@
+<?php foreach ($items as $pageObj): ?>
+<?php
+$fileName = $pageObj['title'];
+$dataId = $this->dataIdPrefix.'-'.$fileName;
+$searchMode = strlen($this->getSearchTerm()) > 0;
+$cbId = 'cb'.md5($pageObj['id']);
+?>
+<li class="<?= $pageObj['subpages'] ? 'has-subitems' : null ?>"
+    data-group-id="<?= $pageObj['id'] ?>"
+    data-item-path="<?= e($fileName) ?>"
+    data-id="<?= $pageObj['id'] ?>"
+    data-item-id="page-<?= $pageObj['id'] ?>">
+<div>
+    <a href="#">
+        <?= e($pageObj['title']) ?>
+        <span class="comment"><?= e($pageObj['slug']) ?></span>
+    </a>
+    <?php if($pageObj['type'] == 'page'): ?>
+    <div class="checkbox custom-checkbox nolabel">
+        <input
+                id="<?= $cbId ?>"
+                type="checkbox"
+                name="object[<?= $pageObj['id']; ?>]"
+        <?= $this->isItemSelected($fileName) ? 'checked' : null ?>
+        data-request="<?= $this->getEventHandler('onSelect') ?>"
+        value="1">
+        <label for="<?= $cbId ?>">Select</label>
+    </div>
+    <?php endif; ?>
+    <?php if($pageObj['type'] == 'page'): ?>
+    <ul class="submenu">
+        <li>
+            <a href="#"
+               data-control="create-object"
+               data-parent="<?= $pageObj['id'] ?>">
+                <i class="icon-plus"></i>
+                <?= e(trans($this->addSubpageLabel)) ?>
+            </a>
+        </li>
+    </ul>
+    <?php endif; ?>
+</div>
+<ol>
+    <?php if ($subpages = $pageObj['subpages']): ?>
+    <?= $this->makePartial('treebranch', ['items' => $subpages]) ?>
+    <?php endif ?>
+</ol>
+</li>
+<?php endforeach ?>
